@@ -175,7 +175,7 @@ int main(void)
 
 	//MoveSemanticsをやらかしてみるテスト
 	std::cout << "Test Build 1" << std::endl;
-	MoveClass::Relay<TypeA>(std::move(ta)); ta.Display(); //mainスコープの変数と同じアドレスになる(Factory/Builderパターンではまずいけど、通常メソッドでは早い実装が期待できる)
+	MoveClass::Relay<TypeA>(std::move(ta)); ta.Display(); //mainスコープの変数と同じアドレスになる
 	std::cout << "Test Build 2" << std::endl;
 	auto&& ta2 = MoveClass::Build<TypeA>(); ta2.Display(); //Buildの中で定義したもの同じアドレスだが、ローカル変数なので壊れる
 	std::cout << "Test Build 3" << std::endl;
